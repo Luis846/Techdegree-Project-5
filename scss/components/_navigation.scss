@@ -1,0 +1,34 @@
+.nav__item{
+	list-style: none;
+	text-align:center;
+	margin:5px;
+	background-color:$white;
+	border-radius: 5px;
+	padding: 10px;
+
+	a {
+	text-decoration: none;
+	color:$black;
+}
+
+	&:first-child {
+	background-color:$emerald;
+
+		a{
+		color:white;
+		}
+	}
+
+
+}
+.nav{
+	display:block;
+	margin:auto;
+	@include break-point {
+    margin-top: 50px;
+
+    .nav__item{
+			display:inline-block;
+		}
+	}
+}

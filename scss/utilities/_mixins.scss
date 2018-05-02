@@ -1,0 +1,40 @@
+@mixin break-point{
+
+    @media #{$breakpoint-medium} {
+    	@content;
+    }
+}
+
+@mixin btn{
+	width:$content-width-small;
+	margin:2.5%;
+	padding:10px;
+	border:none;
+	border-radius:3px;
+	color:white;
+	@content;
+}
+
+@mixin flex{
+	display: flex;
+	flex-direction:row;
+  justify-content: center;
+}
+
+@mixin grid{
+	display: grid;
+  grid-gap: 20px;
+}
+
+@mixin element($element) {
+  &__#{$element} {
+  	@content;
+  }
+}
+
+@mixin mod($mod, $display: null) {
+  &--#{$mod} {
+  	display:$display;
+    @content;
+  }
+}

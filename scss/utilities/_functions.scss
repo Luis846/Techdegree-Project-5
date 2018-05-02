@@ -1,0 +1,33 @@
+@function pix-to-percent($target, $context: $max-width){
+	@return ($target/$context) * 100%;
+
+}
+
+@function per-row($items){
+	$g-percent: pix-to-percent($guts) * 2;
+	$g-total: $items * $g-percent;
+	@return (100% / $items) - $g-total;
+}
+
+@each $theme, $color in $btn-themes{
+	.btn--#{$theme} {
+		background-color:$color;
+	}
+
+}
+
+@each $theme, $color in $col-themes{
+	[class*="grid__col--#{$theme}"]{
+
+	    &.theme__colors{
+	    	background-color:$color ;
+
+	    }
+	}
+}
+@each $theme, $size in $col-sizes{
+	[class*="grid__col--#{$theme}"]{
+    	flex:$size;
+
+	}
+}
